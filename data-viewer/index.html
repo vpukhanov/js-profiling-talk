@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Viewer</title>
+    <link rel="stylesheet" href="/build/tailwind.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h1 class="text-2xl font-bold mb-4">Data Viewer</h1>
+      <button
+        id="open-modal"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Open Data
+      </button>
+      <button
+        id="prefill-data"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        debug:Prefill Data
+      </button>
+    </div>
+
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center"
+    >
+      <div
+        class="bg-white p-8 rounded-lg shadow-md w-3/4 max-h-3/4 overflow-auto"
+      >
+        <h2 class="text-xl font-bold mb-4">Data Summary</h2>
+        <div id="data-summary"></div>
+        <button
+          id="refresh-data"
+          class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          Refresh Data
+        </button>
+        <button
+          id="close-modal"
+          class="mt-4 ml-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <script src="/data-viewer/script.js"></script>
+  </body>
+</html>
