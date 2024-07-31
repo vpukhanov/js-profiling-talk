@@ -13,11 +13,14 @@ function createBars() {
 
 function updateBars() {
   const bars = chart.children;
+  const heights = [];
 
   for (let i = 0; i < bars.length; i++) {
-    const bar = bars[i];
-    const height = bar.offsetHeight * 0.0001 + Math.random() * 100;
-    bar.style.height = `${height}%`;
+    heights[i] = bars[i].offsetHeight * 0.0001 + Math.random() * 100;
+  }
+
+  for (let i = 0; i < bars.length; i++) {
+    bars[i].style.height = `${heights[i]}%`;
   }
 }
 

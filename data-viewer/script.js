@@ -40,6 +40,7 @@ function refreshStats() {
 
 function closeModal() {
   modal.classList.add("hidden");
+  incomeStats = [];
   spendingStats = [];
 }
 

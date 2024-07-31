@@ -16,27 +16,39 @@ function rerender() {
   renderImages();
 }
 
-function renderImages() {
-  images.forEach((img) => {
-    const imgEl = document.createElement("div");
-    imgEl.className = "bg-white p-4 rounded shadow";
-    imgEl.innerHTML = `
-              <img src="${img.src}" alt="${img.title}" class="w-full h-40 object-cover mb-2" loading="lazy">
-              <p class="font-bold">${img.title}</p>
-              <p>Rating: ${"⭐".repeat(img.rating)}</p>
-          `;
-    gallery.appendChild(imgEl);
-  });
+function renderImages(start = 0, count = 500) {
+  let current = start;
+  const end = Math.min(start + count, images.length);
+  const fragment = document.createDocumentFragment();
+
+  function renderChunk(deadline) {
+    for (; current < end; current++) {
+      if (deadline.timeRemaining() <= 0) {
+        requestIdleCallback(renderChunk);
+        return;
+      }
+
+      const img = images[current];
+      const imgEl = document.createElement("div");
+      imgEl.className = "bg-white p-4 rounded shadow";
+      imgEl.innerHTML = `
+                <img src="${img.src}" alt="${img.title}" class="w-full h-40 object-cover mb-2" loading="lazy">
+                <p class="font-bold">${img.title}</p>
+                <p>Rating: ${"⭐".repeat(img.rating)}</p>
+            `;
+      fragment.appendChild(imgEl);
+    }
+    gallery.appendChild(fragment);
+    if (end < images.length) {
+      requestIdleCallback(() => renderImages(end));
+    }
+  }
+
+  requestIdleCallback(renderChunk);
 }
 
 function orderByRating() {
-  for (let i = 0; i < images.length; i++) {
-    for (let j = 0; j < images.length - i - 1; j++) {
-      if (images[j].rating < images[j + 1].rating) {
-        [images[j], images[j + 1]] = [images[j + 1], images[j]];
-      }
-    }
-  }
+  images.sort((a, b) => a.rating - b.rating);
 }
 
 function randomizeOrder() {
