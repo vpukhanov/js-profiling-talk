@@ -4,7 +4,7 @@ let isUpdating = false;
 let updateInterval;
 
 function createBars() {
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 800; i++) {
     const bar = document.createElement("div");
     bar.className = "w-8 bg-blue-500 rounded-t";
     chart.appendChild(bar);
