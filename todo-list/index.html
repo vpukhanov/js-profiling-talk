@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/build/tailwind.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h1 class="text-2xl font-bold mb-4">Todo List</h1>
+      <form id="todo-form" class="mb-4">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Add a new todo"
+          class="w-full p-2 border rounded"
+        />
+        <button
+          type="submit"
+          class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Add Todo
+        </button>
+      </form>
+      <ul id="todo-list" class="space-y-2"></ul>
+    </div>
+    <script src="/todo-list/script.js"></script>
+  </body>
+</html>
