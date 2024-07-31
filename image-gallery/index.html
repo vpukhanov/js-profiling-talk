@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="/build/tailwind.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl font-bold mb-4">Image Gallery</h1>
+      <button
+        id="sort-btn"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4"
+      >
+        Sort by Rating
+      </button>
+      <button
+        id="random-btn"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4"
+      >
+        Randomize Order
+      </button>
+      <div id="gallery" class="grid grid-cols-3 gap-4"></div>
+    </div>
+    <script src="/image-gallery/script.js"></script>
+  </body>
+</html>
