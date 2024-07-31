@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart</title>
+    <link rel="stylesheet" href="/build/tailwind.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl font-bold mb-4">Dynamic Bar Chart</h1>
+      <div
+        id="chart"
+        class="bg-white p-4 rounded shadow h-64 flex items-end justify-around"
+      ></div>
+      <button
+        id="toggle-btn"
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Start Updates
+      </button>
+    </div>
+    <script src="/chart/script.js"></script>
+  </body>
+</html>
