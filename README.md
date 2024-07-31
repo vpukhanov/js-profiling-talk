@@ -11,6 +11,11 @@ There are 4 main examples, each demonstrating different aspects of React perform
 3. `chart` demonstrates layout thrashing by forced reflows
 4. `data-viewer` showcases performance issues caused by memory leaks
 
+### Branches
+
+- `main` branch contains examples with performance issues
+- `final` branch has the examples that have been fixed
+
 ## Run the Examples
 
 Run the script:
