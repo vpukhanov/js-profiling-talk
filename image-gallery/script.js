@@ -5,7 +5,7 @@ const images = [];
 
 for (let i = 0; i < 10000; i++) {
   images.push({
-    src: `https://cataas.com/cat?width=200&height=200&random=${i}`,
+    src: `https://cataas.com/cat?width=200&height=200&random=${i % 100}`,
     title: `Image ${i}`,
     rating: Math.floor(Math.random() * 5) + 1,
   });
